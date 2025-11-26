@@ -1,0 +1,25 @@
+ Como Usar :
+
+ No seu HTML, adicione isso antes de `</body>`:
+
+  <script>
+    const socket = new WebSocket("ws://localhost:3000");
+
+    socket.onmessage = (msg) => {
+      if (msg.data === "reload") {
+        location.reload();
+      }
+    };
+  </script>
+
+ Execute (bash) :
+   node server.js
+
+ Agora qualquer arquivo dentro da pasta **public** vai recarregar automaticamente no navegador.
+
+  /public
+      index.html
+     style.css
+  server.js
+
+
